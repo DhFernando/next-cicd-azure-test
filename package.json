@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "engines": {
-    "node": ">=20.9.0"
+    "node": ">=18.2.0"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.0.1",

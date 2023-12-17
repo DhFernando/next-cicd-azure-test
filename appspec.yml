@@ -1,9 +1,14 @@
 version: 0.0
-Resources:
-  - myLambdaFunction:
-      Type: AWS::Lambda::Function
-      Properties:
-        Name: "myLambdaFunction"
-        Alias: "myLambdaFunctionAlias"
-        CurrentVersion: "1"
-        TargetVersion: "2"
+os: linux
+files:
+  - source: "/"
+    destination: "/home/ec2-user/nextjs-app"
+hooks:
+  BeforeInstall:
+    - location: before_install.sh 
+      timeout: 300
+      runas: root
+  ApplicationStart:
+    - location: app_start.sh 
+      timeout: 600
+      runas: root
